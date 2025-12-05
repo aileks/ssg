@@ -4,14 +4,14 @@ import shutil
 
 def copy_static():
     source = "static"
-    dest = "public"
+    dest = "docs"
     
-    # Delete the public directory if it exists
+    # Delete the docs directory if it exists
     if os.path.exists(dest):
         print(f"Removing directory: {dest}")
         shutil.rmtree(dest)
     
-    # Create the public directory
+    # Create the docs directory
     os.mkdir(dest)
     print(f"Created directory: {dest}")
     

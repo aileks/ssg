@@ -86,7 +86,7 @@ This is the same paragraph on a new line
         )
 
     def test_markdown_to_blocks_complex_document(self):
-        md = "# My Document\n\nThis is the introduction paragraph.\n\n## Section 1\n\n- List item 1\n- List item 2\n\n## Section 2\n\nAnother paragraph with **bold** text.\n\n```\ndef hello():\n    print(\"world\")\n```\n\nFinal paragraph."
+        md = '# My Document\n\nThis is the introduction paragraph.\n\n## Section 1\n\n- List item 1\n- List item 2\n\n## Section 2\n\nAnother paragraph with **bold** text.\n\n```\ndef hello():\n    print("world")\n```\n\nFinal paragraph.'
         blocks = markdown_to_blocks(md)
         self.assertEqual(
             blocks,
@@ -97,7 +97,7 @@ This is the same paragraph on a new line
                 "- List item 1\n- List item 2",
                 "## Section 2",
                 "Another paragraph with **bold** text.",
-                "```\ndef hello():\n    print(\"world\")\n```",
+                '```\ndef hello():\n    print("world")\n```',
                 "Final paragraph.",
             ],
         )

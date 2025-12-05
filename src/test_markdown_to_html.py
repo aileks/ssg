@@ -101,10 +101,10 @@ class TestMarkdownToHtml(unittest.TestCase):
         )
 
     def test_complex_document(self):
-        md = "# My Blog Post\n\nThis is an intro paragraph with **bold** and _italic_ text.\n\n## Section 1\n\n- Point 1\n- Point 2\n- Point 3\n\n## Code Example\n\n```\ndef hello():\n    print(\"world\")\n```\n\n> Always remember to **have fun**!\n\n1. First step\n2. Second step\n"
+        md = '# My Blog Post\n\nThis is an intro paragraph with **bold** and _italic_ text.\n\n## Section 1\n\n- Point 1\n- Point 2\n- Point 3\n\n## Code Example\n\n```\ndef hello():\n    print("world")\n```\n\n> Always remember to **have fun**!\n\n1. First step\n2. Second step\n'
         node = markdown_to_html_node(md)
         html = node.to_html()
-        
+
         self.assertIn("<h1>My Blog Post</h1>", html)
         self.assertIn("<h2>Section 1</h2>", html)
         self.assertIn("<ul><li>Point 1</li>", html)

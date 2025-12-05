@@ -33,3 +33,5 @@ def generate_page(from_path, template_path, dest_path):
     # Write to destination file
     with open(dest_path, "w") as f:
         f.write(html)
+
+

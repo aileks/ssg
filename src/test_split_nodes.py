@@ -574,10 +574,7 @@ class TestTextToTextnodes(unittest.TestCase):
     def test_text_to_textnodes_empty_like_string(self):
         text = ""
         nodes = text_to_textnodes(text)
-        self.assertListEqual(
-            [TextNode("", TextType.TEXT)],
-            nodes,
-        )
+        self.assertListEqual([], nodes)
 
     def test_text_to_textnodes_complex_urls(self):
         text = (

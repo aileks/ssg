@@ -58,8 +58,14 @@ def heading_to_html_node(block):
 
 def code_to_html_node(block):
     text = block[3:-3]
-    if text.startswith("\n"):
-        text = text[1:]
+    
+    lines = text.split("\n")
+    
+    if lines and lines[0].strip() and not lines[0].startswith(" "):
+        lines = lines[1:]
+    
+    text = "\n".join(lines).strip() + "\n"
+    
     code_node = TextNode(text, TextType.CODE)
     html_node = text_node_to_html_node(code_node)
     return ParentNode("pre", [html_node])
